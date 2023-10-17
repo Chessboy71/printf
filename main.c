@@ -9,7 +9,6 @@
  */
 int main(void)
 {
-
     _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
@@ -17,6 +16,6 @@ int main(void)
     _printf("Complete the sentence : you know %s jon Snow \n", "nothing");
     printf("Complete the sentence : you know %s jon Snow \n", "nothing");
     _printf("Complete the sentence : you know %s jon %% \n", NULL);
-    printf("Complete the sentence : you know %s jon Snow \n", NULL);
+    printf("Complete the sentence : you know %s jon Snow \n", "nothing");
     return (0);
 }
