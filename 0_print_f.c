@@ -18,15 +18,14 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-		format++;
-		switch (*format)
-		{
-			case 'c':
+			format++;
+			switch (*format)
 			{
+				case 'c':
+				{
 				char c = va_arg(arg_list, int);
 
-				write(1, &c, 1)
-				p_char++;
+				p_char += _putchar(&c);
 				break;
 			}
 			case 's':
@@ -34,36 +33,24 @@ int _printf(const char *format, ...)
 				char *str = va_arg(arg_list, char *);
 
 				if (str != NULL)
-				{
-					while (*str != '\0')
-					{
-						write(1, str, 1)
-						str++;
-						p_char++;
-					}
-				}
+					_puts(str);
 				else
-				{
-					write(1, "(NULL)", 6);
-					p_char += 6;
-				}
+					p_char += _puts("(NULL)");
 				break;
 			}
 			case '%':
 			{
-				write(1, %, 1)
-				p_char++;
+				p_char += _putchar("%");
 				break;
-				}
 			}
 		}
 		else
 		{
-			write(1, format, 1)
-			p_char++;
+			p_char += _putchar(format);
+			format++;
 		}
-		format++;
 	}
 	va_end(arg_list);
 	return (p_char);
+}
 }
