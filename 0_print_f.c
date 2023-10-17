@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
 #include <unistd.h>
-
+#include <stdio.h>
 /**
  * _printf - formatted output conversion and print data.
  * @format: input string.
@@ -11,6 +11,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
+	int p_char = 0;
 
 	va_start(args, format);
 
@@ -21,29 +22,35 @@ int _printf(const char *format, ...)
 			format++;
 			switch (*format)
 			{
-				case 'c': {
-					char ch = (char)va_arg(args, char);
-
-					putchar(ch);
-				} break;
-				case 's': {
-					char *str = va_arg(args, char *);
-
-					while (*str)
-					{
-						putchar(*str);
-						str++;
-					}
-				} break;
-				default;
-					putchar('%');
-					putchar(*format);
-			}
-			else
+			case 'c':
 			{
-				putchar(*format);
+				char ch = (char)va_arg(args, int);
+
+				p_char += _putchar(ch);
+				break;
 			}
-			format++;
+			case 's':
+			{
+				char *str = va_arg(args, char *);
+
+				while (*str)
+				{
+					p_char += _putchar(*str);
+					str++;
+				}
+				break;
+			}
+			default:
+				_putchar('%');
+				_putchar(*format);
+			}
 		}
-	va_end(arg_list);
+		else
+		{
+			_putchar(*format);
+		}
+		format++;
+	}
+	va_end(args);
+	return (p_char);
 }
