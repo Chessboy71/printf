@@ -14,5 +14,7 @@ int main(void)
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
+    _printf("Complete the sentence : you know %s jon Snow \n", "nothing");
+    printf("Complete the sentence : you know %s jon Snow \n", "nothing");
     return (0);
 }
