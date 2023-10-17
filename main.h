@@ -7,9 +7,6 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 void _puts(char *str);
-int printf_str(va_list ap);
-int print_format(char specifier, va_list ap);
-int print_str(char *s);
-int print_digit(long n, int base);
+int print_number(int n);
 
 #endif /* MAIN_H */
