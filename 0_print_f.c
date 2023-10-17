@@ -30,6 +30,10 @@ int _printf(const char *format, ...)
 			{
 				char *str = va_arg(args, char *);
 
+				if (str == NULL)
+				{
+					str = "(null)";
+				}
 				while (*str)
 				{
 					p_char += _putchar(*str);

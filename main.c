@@ -16,5 +16,7 @@ int main(void)
     printf("String:[%s]\n", "I am a string !");
     _printf("Complete the sentence : you know %s jon Snow \n", "nothing");
     printf("Complete the sentence : you know %s jon Snow \n", "nothing");
+    _printf("Complete the sentence : you know %s jon %% \n", NULL);
+    printf("Complete the sentence : you know %s jon Snow \n", NULL);
     return (0);
 }
