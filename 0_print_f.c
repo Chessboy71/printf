@@ -39,10 +39,11 @@ int _printf(const char *format, ...)
 					str++;
 				}
 			}
-			else
+			else if (format[i] != '\0')
 			{
 			p_char += _putchar('%');
 			p_char += _putchar(format[i]);
+			i++;
 			}
 		}
 	}
