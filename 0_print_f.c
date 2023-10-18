@@ -19,31 +19,32 @@ int _printf(const char *format, ...)
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
-			_putchar(format[i]);
+			p_char += _putchar(format[i]);
 		else
 		{
 			i++;
 			if (format[i] == 'c')
-				_putchar((char)va_arg(args, int));
+				p_char += _putchar((char)va_arg(args, int));
 			else if (format[i] == '%')
-				_putchar('%');
+				p_char += _putchar('%');
 			else if (format[i] == 's')
 			{
 				char *str = va_arg(args, char *);
 
 				if (str == NULL)
-				{
 					str = "(null)";
-				}
 				while (*str)
 				{
 					p_char += _putchar(*str);
 					str++;
 				}
-				p_char--;
+			}
+			else
+			{
+			p_char += _putchar('%');
+			p_char += _putchar(format[i]);
 			}
 		}
-		p_char--;
 	}
 	va_end(args);
 	return (p_char);

@@ -16,6 +16,5 @@ int main(void)
     _printf("Complete the sentence : you know %s jon Snow \n", "nothing");
     printf("Complete the sentence : you know %s jon Snow \n", "nothing");
     _printf("Complete the sentence : you know %s jon Snow \n", (char *)0);
-    printf("Complete the sentence : you know %s jon Snow \n", (char *)0);
     return (0);
 }
