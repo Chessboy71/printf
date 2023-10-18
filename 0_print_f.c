@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				p_char += _putchar('%');
+				_putchar('%');
 				p_char += _putchar(format[i]);
 			}
 		}
