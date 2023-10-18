@@ -13,7 +13,8 @@ int _printf(const char *format, ...)
 	int i, p_char = 0;
 
 	va_start(args, format);
-	if (!format || (format[0] == '%' && !format[1]))
+	if (!format || (format[0] == '%' && !format[1]) ||
+			(format[0] == '%' && format[1] == ' ' && !format[2]))
 		return (-1);
 
 	for (i = 0; format[i] != '\0'; i++)
@@ -41,7 +42,9 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
+			p_char += _putchar('%');
 			p_char += _putchar(format[i]);
+			i++;
 			}
 		}
 	}
