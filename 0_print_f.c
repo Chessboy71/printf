@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * _printf - formatted output conversion and print data.
@@ -42,7 +43,7 @@ int _printf(const char *format, ...)
 				p_char--;
 			}
 		}
-		p_char++;
+		p_char--;
 	}
 	va_end(args);
 	return (p_char);
