@@ -20,7 +20,7 @@ int print_number(int n)
 	{
 		if (n / 10 != 0)
 		{
-			print_number(n / 10);
+			count += print_number(n / 10);
 		}
 		count += _putchar(((unsigned int)n % 10) + '0');
 	}
