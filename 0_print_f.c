@@ -28,15 +28,7 @@ int _printf(const char *format, ...)
 				p_char += _putchar('%');
 			else if (format[i] == 's')
 			{
-				char *str = va_arg(args, char *);
-
-				if (str == NULL)
-					str = "(null)";
-				while (*str)
-				{
-					p_char += _putchar(*str);
-					str++;
-				}
+				p_char += print_string(va_arg(args, char *));
 			}
 			else if (format[i] == 'i' || format[i] == 'd')
 				p_char += print_number(va_arg(args, int));

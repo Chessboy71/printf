@@ -10,11 +10,9 @@
 int main(void)
 {
     int len, len2;
-    long int l = INT_MIN;
 
-    l -= 1024;
-    len = _printf("%d", l);
-    len2 = printf("%d", l);
+    len = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
+    len2 = printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
     fflush(stdout);
     if (len != len2)
     {
