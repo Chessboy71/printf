@@ -38,6 +38,8 @@ int _printf(const char *format, ...)
 					str++;
 				}
 			}
+			else if (format[i] == 'i' || format[i] == 'd')
+				p_char += print_number(va_arg(args, int));
 			else
 			{
 				p_char += _putchar('%');
