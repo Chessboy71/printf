@@ -14,7 +14,8 @@ int print_number(int n)
 	else if (n == INT_MIN)
 	{
 		count += _putchar('-');
-		count += print_number(INT_MAX);
+		count += print_number(214748364);
+		count += print_number(8);
 	}
 	else if (n < 0)
 	{
