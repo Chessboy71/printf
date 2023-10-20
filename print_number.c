@@ -11,6 +11,11 @@ int print_number(int n)
 	{
 		count += _putchar('0');
 	}
+	else if (n == INT_MIN)
+	{
+		count += _putchar('-');
+		count += print_number(INT_MAX);
+	}
 	else if (n < 0)
 	{
 		count += _putchar('-');
