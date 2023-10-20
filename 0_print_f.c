@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
 
 /**
  * _printf - formatted output conversion and print data.
@@ -20,8 +19,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 			p_char += _putchar(format[i]);
-			i++;
-		else if (*format == '%')
+		else
 		{
 			i++;
 			if (format[i] == 'c')
@@ -44,7 +42,6 @@ int _printf(const char *format, ...)
 			{
 				p_char += _putchar('%');
 				p_char += _putchar(format[i]);
-				i++;
 			}
 		}
 	}

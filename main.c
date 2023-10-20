@@ -9,12 +9,16 @@
  */
 int main(void)
 {
-    _printf("Character:[%c]\n", 'H');
-    printf("Character:[%c]\n", 'H');
-    _printf("String:[%s]\n", "I am a string !");
-    printf("String:[%s]\n", "I am a string !");
-    _printf("Complete the sentence : you know %s jon Snow \n", "nothing");
-    printf("Complete the sentence : you know %s jon Snow \n", "nothing");
-    _printf("Complete the sentence : you know %s jon Snow \n", (char *)0);
+    int len, len2;
+
+    len = _printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+    len2 = printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+    fflush(stdout);
+    if (len != len2)
+    {
+        printf("Lengths differ.\n");
+        fflush(stdout);
+        return (1);
+    }
     return (0);
 }
